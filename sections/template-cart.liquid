@@ -9,6 +9,7 @@
 
     <div class="max-w-6xl flex flex-col my-10 mx-auto">
       <form
+        id="cartForm"
         action="{{ routes.cart_url }}"
         method="POST"
         novalidate>
@@ -64,6 +65,13 @@
                 id="cart_notes"></textarea>
             </div>
           </div>
+
+          <p>
+            <label>Please let us know your favorite color</label>
+          
+            <input class="w-full md:max-w-lg resize-none border h-20" type="text" name="attributes[Favorite color]" form="cartForm" value="{{ cart.attributes['Favorite color'] }}">
+          </p>
+
           <div class="w-full my-4 md:w-80">
             {% for block in section.blocks %}
               {% case block.type %}
